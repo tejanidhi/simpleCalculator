@@ -1,0 +1,111 @@
+<html>
+<head>
+    <title>margin</title>
+    <style>
+        *{
+            margin: 0px;
+            padding:0px;
+        }
+        .layout{
+            background: #404040;
+            width: 350px;
+            height: 350px;
+            margin: 170px 500px;
+            border-radius: 10px;
+        }
+        #tf{
+            width:290px;
+            height:45px;
+            margin-top: 20px;
+            float:left;
+            margin-left: 10px;
+            border-radius: 5px;
+        }
+        #btc{
+            width:40px; height: 45px;
+            margin-top: 20px;
+            border-radius: 5px;
+            margin-left: 2px;
+            font-size: 20px;
+            background: #FF3399;
+            border-color: #FF3399;
+        }
+        .row1, .row2, .row3, .row4{
+            float: left;
+        }
+        #bt1, #bt4, #bt7, #btdot {
+            margin-left: 10px;
+        }
+        #btl, #bt-, #btplus, #btstar{
+            width:40px; height: 45px;
+        
+        }
+        #bt1, #bt2, #bt3,#bt4, #bt5, #bt6, #bt7, #bt8, #bt9,#btdot, #bt0, #bteql{
+            width:92.5px; height: 45px;
+            margin-top:20px;
+        }
+        #bt1, #bt2, #bt3, #btl, #bt4, #bt5, #bt6, #bt-, #bt7, #bt8, #bt9,#btdot, #bt0, #bteql,#btplus,#btstar
+        {
+            background-color: #330066;
+            color: white;
+            font-size: 15px;
+            font-family: 'Times New Roman', Times, serif;
+            border-radius: 5px;
+            border-color: #330066;
+        }
+        #bteql{
+            background: #FF3399;
+            border-color: #FF3399   ;
+        }
+    </style>
+    <script type="text/javascript">
+        function action(){
+             get_value = event.target.value;
+             if (get_value !== "=" && get_value !== "C"){
+                document.getElementById("tf").value += get_value;
+             }
+             if (get_value == "C"){
+                document.getElementById("tf").value = "";
+             }
+             if(get_value == "="){
+                 get_input = document.getElementById("tf").value 
+                 cal = eval(get_input);
+                 document.getElementById("tf").value = cal;
+             }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="layout">
+        <div class="display">
+            <input type="text-field" id="tf">
+            <input type="button" id="btc" value="C" onclick="action()">
+        </div>
+        <div class ="row1">
+            <input type="button" id="bt1" value="1" onclick="action()">
+            <input type="button" id="bt2" value="2" onclick="action()">
+            <input type="button" id="bt3" value="3" onclick="action()">
+            <input type="button" id="btl" value="/" onclick="action()">
+        </div>
+        <div class ="row2">
+            <input type="button" id="bt4" value="4" onclick="action()">
+            <input type="button" id="bt5" value="5" onclick="action()">
+            <input type="button" id="bt6" value="6" onclick="action()">
+            <input type="button" id="bt-" value="-" onclick="action()">
+        </div>
+        <div class ="row3">
+            <input type="button" id="bt7" value="7" onclick="action()">
+            <input type="button" id="bt8" value="8" onclick="action()">
+            <input type="button" id="bt9" value="9" onclick="action()">
+            <input type="button" id="btplus" value="+" onclick="action()">
+        </div>
+        <div class ="row4">
+            <input type="button" id="btdot" value="." onclick="action()">
+            <input type="button" id="bt0" value="0" onclick="action()">
+            <input type="button" id="bteql" value="=" onclick="action()">
+            <input type="button" id="btstar" value="*" onclick="action()">
+        </div>
+    </div>
+</body>
+</html>
